@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+
+            $(document).ready(function() {
+                var design_quote = new Array("a brand", "a book", "a technology", "an experience","a concept","an interaction","an app","an image","an installation","a website","a service");
+                var inspired_by_quote=new Array("circle","curves","healthcare","senior citezens","guns","furniture","squares","natural materials","eastern medicenes","dots");
+                var that_is_quote=new Array("overlapping","chaotic","colaborative","approachable","paradigm shifting","responsive","immersive","tactical","discrete","a family");
+                var through_quote=new Array("brand touchpoints","materials","hardware hacks","texture","wireframes","VR simulations","concept sketches","layouts","personas");
+                var using_quote=new Array("pen & paper","excel","video","photoshop","existing objects","fabric","collage","CAD","code");
+                 design_quote_randno = design_quote[Math.floor( Math.random() * design_quote.length )];
+                 inspired_by_quote_randno = inspired_by_quote[Math.floor( Math.random() * inspired_by_quote.length )];
+                 that_is_quote_randno = that_is_quote[Math.floor( Math.random() * that_is_quote.length )];
+                 through_quote_randno = through_quote[Math.floor( Math.random() * through_quote.length )];
+                 using_quote_randno = using_quote[Math.floor( Math.random() * using_quote.length )];
+                $('.design_quote').val( design_quote_randno );
+                $('.inspired_by_quote').val( inspired_by_quote_randno );
+                $('.that_is_quote').val( that_is_quote_randno );
+                $('.through_quote').val( through_quote_randno );
+                $('.using_quote').val( using_quote_randno );
+                $('.whole_content').click(function(){
+                    design_quote_randno = design_quote[Math.floor( Math.random() * design_quote.length )];
+                 inspired_by_quote_randno = inspired_by_quote[Math.floor( Math.random() * inspired_by_quote.length )];
+                 that_is_quote_randno = that_is_quote[Math.floor( Math.random() * that_is_quote.length )];
+                 through_quote_randno = through_quote[Math.floor( Math.random() * through_quote.length )];
+                 using_quote_randno = using_quote[Math.floor( Math.random() * using_quote.length )];
+                $('.design_quote').val( design_quote_randno );
+                $('.inspired_by_quote').val( inspired_by_quote_randno );
+                $('.that_is_quote').val( that_is_quote_randno );
+                $('.through_quote').val( through_quote_randno );
+                $('.using_quote').val( using_quote_randno );
+
+                });
+                $('.content').on('click','.click',function(){
+                    design_quote_randno = design_quote[Math.floor( Math.random() * design_quote.length )];
+                 inspired_by_quote_randno = inspired_by_quote[Math.floor( Math.random() * inspired_by_quote.length )];
+                 that_is_quote_randno = that_is_quote[Math.floor( Math.random() * that_is_quote.length )];
+                 through_quote_randno = through_quote[Math.floor( Math.random() * through_quote.length )];
+                 using_quote_randno = using_quote[Math.floor( Math.random() * using_quote.length )];
+                    var get_class=$(this).attr('class').split(' ')[1];
+                    var x=window[get_class+'_quote'+'_randno'];
+                    $("."+get_class+"_quote").val(x);
+
+                });
+                 $('.content').on('click','.selector',function(){
+                     $(this).select();
+
+                 });
+
+            });
+            </script>
+        <style>
+            
+            .click
+            {
+                text-decoration: none;
+            }
+            .content input[type='text']
+            {
+                border: none;
+                outline: none;
+                background-color: transparent;
+                font-size: 48px;
+            }
+            a:link{
+                color: white;
+                text-decoration: none;
+            }
+            a:visited{
+                color: white;
+                text-decoration: none;
+            }
+            a:hover{
+                color: #666;
+                text-decoration: none;
+            }
+            .content{
+                    font-family: 'Lora', Georgia, serif;
+                    font-size: 48px;
+                    text-align: left;
+                    line-height: 60px;
+                    left: 30%;
+                    top: 30%;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    transition: opacity 0.3s;
+            }
+            body{
+                background-color: #1A1A1A;
+            }
+            .design_quote{
+                color: blue;
+            }
+            .inspired_by_quote{
+                color: #6C9;
+            }
+            .that_is_quote{
+                color: #C6C;
+            }
+            .through_quote{
+                color: #F90;
+            }
+            .using_quote{
+                color: #FF0;
+            }
+            .whole_content{
+                color: white;
+                font-family: 'Lora', Georgia, serif;
+                font-size: 20px;
+                text-align: left;
+                line-height: 60px;
+                cursor: pointer;
+            }
+            .whole_content:hover{
+                color: #666;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="whole_content">Change whole content</div>
+        <div class="content">
+            <div>
+                <a href="#" class="click design">Design</a>
+                <span>
+                    <input type="text" class="design_quote selector" readonly="">
+                </span>
+            </div>
+            <div>
+                <a href="#" class="click inspired_by">Inspired By</a>
+                <span>
+                    <input type="text" class="inspired_by_quote selector" readonly="">
+                </span>
+            </div>
+            <div>
+                <a href="#" class="click that_is">That is</a>
+                <span>
+                    <input type="text" class="that_is_quote selector" readonly="">
+                </span>
+            </div>
+            <div>
+                <a href="#" class="click through">Through</a>
+                <span>
+                    <input type="text" class="through_quote selector" readonly="">
+                </span>
+            </div>
+            <div>
+                <a href="#" class="click using">Using</a>
+                <span>
+                    <input type="text" class="using_quote selector" readonly="">
+                </span>
+            </div>
+            
+            
+        </div>
+    </body>
+</html>
